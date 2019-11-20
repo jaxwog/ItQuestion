@@ -210,17 +210,17 @@ public class Main {
 //        System.out.println(getWordNumOrLett("0,123423343fbfdaA"));
 
 
-        jdkAES();
-
-        String content = "test";
-        String password = "12345678";
+//        jdkAES();
+//
+//        String content = "test";
+//        String password = "12345678";
         //加密
-        System.out.println("加密前：" + content);
-        byte[] encryptResult = encrypt(content, password);
-        System.out.println("加密后：" + Base64.encode(encryptResult));
+//        System.out.println("加密前：" + content);
+//        byte[] encryptResult = encrypt(content, password);
+//        System.out.println("加密后：" + Base64.encode(encryptResult));
         //解密
-        byte[] decryptResult = decrypt(encryptResult,password);
-        System.out.println("解密后：" + new String(decryptResult));
+//        byte[] decryptResult = decrypt(encryptResult,password);
+//        System.out.println("解密后：" + new String(decryptResult));
 //
 //        encrypByMD5("test5a6d2bd272588e09448e746862cfa16c9328453fbffdddcff2218fc3");
           //=======================================================================================
@@ -288,7 +288,7 @@ public class Main {
 //        System.out.println("传入长度=224,计算后长度="+tableSizeFor(224));
 
 
-//        binaryTreeHH();
+        binaryTree();
 
         System.out.println("\nTest End！");
 

@@ -7,10 +7,17 @@ package com.wyz.design.resposbility;
  */
 public abstract class AbstractHandler {
     protected AbstractHandler nextHandler;
+
+    /**
+     * 处理对象
+     * @param abstractRequest
+     */
     public  void handleRequest(AbstractRequest abstractRequest) {
         if(getHandleLevel()==abstractRequest.getRequestLevel()) {
+            //如果处理者和请求者一致，进行处理
             handle(abstractRequest);
         }else {
+            //如果不一致，是否还有后续处理者，如果有继续处理，没有则返回
             if(nextHandler!=null) {
                 nextHandler.handleRequest(abstractRequest);
             }else {
