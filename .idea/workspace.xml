@@ -68,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client (2)">
+  <component name="RunManager" selected="Application.Client (4)">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wyz.design.template.Client" />
       <module name="ItQuestion" />
@@ -95,6 +95,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wyz.design.states.Client" />
+      <module name="ItQuestion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wyz.design.states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wyz.design.interpreter.Client" />
       <module name="ItQuestion" />
@@ -108,25 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.Main" />
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wyz.design.strategy.Client" />
       <module name="ItQuestion" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wyz.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.tree.SearchBinaryTree" />
-      <module name="ItQuestion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wyz.tree.*" />
+          <option name="PATTERN" value="com.wyz.design.strategy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,19 +135,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.SearchBinaryTree" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Client (1)" />
       <item itemvalue="Application.Client (2)" />
+      <item itemvalue="Application.Client (3)" />
+      <item itemvalue="Application.Client (4)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (4)" />
+        <item itemvalue="Application.Client (3)" />
         <item itemvalue="Application.Client (2)" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.SearchBinaryTree" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +170,7 @@
       <workItem from="1572575925971" duration="611000" />
       <workItem from="1572587521033" duration="18083000" />
       <workItem from="1573092097605" duration="9149000" />
-      <workItem from="1573630018725" duration="20282000" />
+      <workItem from="1573630018725" duration="24355000" />
     </task>
     <servers />
   </component>

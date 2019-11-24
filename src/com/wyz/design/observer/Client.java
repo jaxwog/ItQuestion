@@ -5,6 +5,7 @@ package com.wyz.design.observer;
  * Created by jax on 2019/11/20 11:19
  * TODO:观察者模式
  * 被观察者提供一个集合保存观察者，提供添加删除方法，提供通知每个观察者的方法
+ * Android源码参考ListView
  */
 public class Client {
     public static void main(String[] args) {
