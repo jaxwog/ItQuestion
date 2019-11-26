@@ -8,7 +8,7 @@ package com.wyz.design.strategy;
  */
 public class Client {
     public static void main(String[] args) {
-        IStrategy strategy = new StrategyInitial();
+        IStrategy strategy = new StrategyHigh();
         MemberContext memberContext = new MemberContext(strategy);
         System.out.println("打折后价格为："+memberContext.caculetor(100));
     }
