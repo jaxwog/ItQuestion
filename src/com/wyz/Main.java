@@ -290,6 +290,8 @@ public class Main {
 
         binaryTree();
 
+        System.out.println(dateCycle("2019-04-24 14:14"));
+
         System.out.println("\nTest End！");
 
     }
@@ -304,6 +306,18 @@ public class Main {
         System.out.println("树的高度/深度为:"+hh.getHight());
 
 
+    }
+
+    //格式化时间
+    public static String dateCycle(String ymd) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy年MM月dd号 HH:mm");
+        try {
+            Date parse = sdf.parse(ymd);
+            return sdf1.format(parse);
+        } catch (ParseException e) {
+            return "";
+        }
     }
 
 
