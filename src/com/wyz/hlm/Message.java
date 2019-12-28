@@ -11,6 +11,8 @@ public class Message {
 
     Handler target;
 
+    Runnable callback;
+
     @Override
     public String toString() {
         return obj.toString();

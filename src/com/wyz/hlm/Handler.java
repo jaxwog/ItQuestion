@@ -27,6 +27,15 @@ public class Handler {
 
     }
 
+    public void post(Runnable runnable){
+        Message m = new Message();
+        m.target = this;
+        m.callback = runnable;
+        m.obj = "我是测试a";
+        mQueue.enqueueMessage(m);
+    }
+
+
     /**
      * 子类重载时候进行处理
      * @param msg
@@ -34,12 +43,20 @@ public class Handler {
     public void handleMessage(Message msg) {
     }
 
+    private static void handleCallback(Message message) {
+        message.callback.run();
+    }
+
     /**
      * 转发
      * @param msg
      */
     public void dispatchMessage(Message msg) {
+        if (msg.callback != null) {
+            handleCallback(msg);
+        }else {
             handleMessage(msg);
+        }
     }
 
 }

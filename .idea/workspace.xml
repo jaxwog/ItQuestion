@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afa5ef8b-b0d0-48cc-9dd7-786f21035746" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Action1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Func1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Observable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscrbleMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscriable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscribleOnIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubsricbleLift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OperatorMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Subscrible.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItQuestion/META-INF/ItQuestion.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/design/resposbility/Handler1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/design/resposbility/Handler1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wyz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wyz/hlm/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/hlm/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wyz/hlm/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/hlm/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +49,9 @@
     <option name="jreName" value="#JAVA_INTERNAL" />
   </component>
   <component name="ProjectId" id="1SzmblUMCTLszAOh5VlW4OXgwLV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -61,7 +75,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -70,33 +84,7 @@
       <recent name="$PROJECT_DIR$/src/com/wyz/arsc" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.design.template.Client" />
-      <module name="ItQuestion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wyz.design.template.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.design.observer.Client" />
-      <module name="ItQuestion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wyz.design.observer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Client (5)">
     <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wyz.design.states.Client" />
       <module name="ItQuestion" />
@@ -116,6 +104,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.wyz.design.iterator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wyz.design.rx.Client" />
+      <module name="ItQuestion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wyz.design.rx.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,20 +151,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Client (1)" />
-      <item itemvalue="Application.Client (2)" />
       <item itemvalue="Application.Client (3)" />
       <item itemvalue="Application.Client (4)" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client (5)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (5)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Client (4)" />
         <item itemvalue="Application.Client (4)" />
         <item itemvalue="Application.Client (3)" />
-        <item itemvalue="Application.Client (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -230,30 +230,60 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1575293977564">
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1577112523172">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1575293977564" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1575293977563">
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1577112523172" />
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576856065657" />
+    <state width="1638" height="384" key="GridCell.Tab.0.bottom" timestamp="1577556008355">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1575293977563" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1575293977563">
+    <state width="1638" height="384" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008355" />
+    <state width="1638" height="363" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202122" />
+    <state width="1638" height="384" key="GridCell.Tab.0.center" timestamp="1577556008353">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1575293977563" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1575293977563">
+    <state width="1638" height="384" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008353" />
+    <state width="1638" height="363" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202120" />
+    <state width="1638" height="384" key="GridCell.Tab.0.left" timestamp="1577556008351">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1575293977563" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1575292170200">
+    <state width="1638" height="384" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008351" />
+    <state width="1638" height="363" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202110" />
+    <state width="1638" height="384" key="GridCell.Tab.0.right" timestamp="1577556008355">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="384" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008355" />
+    <state width="1638" height="363" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202121" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1576901202566">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202566" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1576901202564">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202564" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1576901202563">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202563" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1576901202565">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202565" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1576857947649">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1575292170200" />
+    <state x="341" y="164" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576857947649" />
     <state x="494" y="333" key="com.intellij.ide.util.TipDialog" timestamp="1575291057926">
       <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state x="494" y="333" key="com.intellij.ide.util.TipDialog/0.23.1680.951@0.23.1680.951" timestamp="1575291057926" />
+    <state x="514" y="189" width="651" height="672" key="find.popup" timestamp="1577365585557">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="514" y="189" width="651" height="672" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1577365585557" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -272,11 +302,6 @@
           <url>file://$PROJECT_DIR$/src/com/wyz/test/StringUtils.java</url>
           <line>249</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/wyz/Main.java</url>
-          <line>344</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/wyz/array/ChessBoradProblem.java</url>

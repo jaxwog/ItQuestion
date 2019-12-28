@@ -1,9 +1,11 @@
 package com.wyz;
 
 
-
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import com.wyz.array.*;
+import com.wyz.hlm.Handler;
+import com.wyz.hlm.Looper;
+import com.wyz.hlm.Message;
 import com.wyz.j2ee.ArraySearch;
 import com.wyz.linearlist.SeqList;
 import com.wyz.linearlist.SinglyLinkedList;
@@ -11,6 +13,7 @@ import com.wyz.linearlist.SinglyLinkedList_reverse;
 import com.wyz.linearlist.SortedSinglyLinkedList;
 import com.wyz.recursion.DigitTower;
 import com.wyz.recursion.Fibonacci;
+import com.wyz.stack.PriorityQueue;
 import com.wyz.stack.Process;
 import com.wyz.stack.*;
 import com.wyz.test.CharacterParser;
@@ -30,10 +33,7 @@ import java.math.BigDecimal;
 import java.security.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -224,41 +224,50 @@ public class Main {
 //
 //        encrypByMD5("test5a6d2bd272588e09448e746862cfa16c9328453fbffdddcff2218fc3");
           //=======================================================================================
-//        //模拟安卓消息队列
-//        Looper.prepare();//初始化
-//        //主线程
-//        Handler handler = new Handler(){
-//            @Override
-//            public void handleMessage(Message msg) {
-//                System.out.println(Thread.currentThread().getName()+",接收到消息"+msg.toString());
-//            }
-//        };
-//
-//
-//        //子线程
-//        for (int i = 0; i < 10; i++) {
-//            new Thread(){
-//                @Override
-//                public void run() {
-//                   while (true){
-//                       Message msg = new Message();
-//                       msg.what = 1;
-//                       synchronized (UUID.class){
-//                           msg.obj = Thread.currentThread().getName()+"，发送消息"+UUID.randomUUID().toString();
-//                       }
-//                       System.out.println(msg.toString());
-//                       handler.sendMessage(msg);
-//                       try {
-//                           Thread.sleep((long) (1000*Math.random()));
-//                       } catch (InterruptedException e) {
-//                           e.printStackTrace();
-//                       }
-//                   }
-//                }
-//            }.start();
-//        }
-//
-//        Looper.loop();//开始轮询
+        //模拟安卓消息队列
+        Looper.prepare();//初始化
+        //主线程
+        Handler handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                System.out.println(Thread.currentThread().getName()+",接收到消息"+msg.toString());
+            }
+        };
+
+
+        //子线程
+        for (int i = 0; i < 10; i++) {
+            new Thread(){
+                @Override
+                public void run() {
+                   while (true){
+                       Message msg = new Message();
+                       msg.what = 1;
+                       synchronized (UUID.class){
+                           msg.obj = Thread.currentThread().getName()+"，发送消息"+UUID.randomUUID().toString();
+                       }
+                       System.out.println(msg.toString());
+                       handler.sendMessage(msg);
+                       try {
+                           Thread.sleep((long) (1000*Math.random()));
+                       } catch (InterruptedException e) {
+                           e.printStackTrace();
+                       }
+                   }
+                }
+            }.start();
+
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("我执行完成了"+Thread.currentThread().getName());
+                }
+            });
+
+        }
+
+
+        Looper.loop();//开始轮询
         //=======================================================================================
 
 //        FutureTest.test();
