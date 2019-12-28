@@ -83,7 +83,6 @@ public class Client {
                     }
                 })
                 .subscribleOnIO()
-//                .subscribleMain()
                 //subscrible订阅  Subscrible卖铁的人
          .subscrible(new Subscrible<Integer>() {
                     @Override
