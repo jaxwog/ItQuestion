@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afa5ef8b-b0d0-48cc-9dd7-786f21035746" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Action1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Func1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscrbleMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscriable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubscribleOnIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OnSubsricbleLift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Operator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/OperatorMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/rx/Subscrible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/FastJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/News.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ItQuestion/com/wyz/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wyz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wyz/hlm/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/hlm/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wyz/hlm/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wyz/hlm/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/wyz/design/generic" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,18 +72,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/wyz/design/generic" />
       <recent name="$PROJECT_DIR$/src/com/wyz/arscrelease/androlib/res" />
       <recent name="$PROJECT_DIR$/src/com/wyz/arscrelease" />
       <recent name="$PROJECT_DIR$/src/com/wyz/arsc" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client (5)">
-    <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.design.states.Client" />
+  <component name="RunManager" selected="Application.Client (1)">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wyz.design.json.Client" />
       <module name="ItQuestion" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wyz.design.states.*" />
+          <option name="PATTERN" value="com.wyz.design.json.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,19 +145,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Client (3)" />
       <item itemvalue="Application.Client (4)" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Client (5)" />
+      <item itemvalue="Application.Client (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Client (5)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Client (4)" />
         <item itemvalue="Application.Client (4)" />
-        <item itemvalue="Application.Client (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -230,30 +224,34 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1577112523172">
+    <state x="440" y="192" key="#Project_Structure" timestamp="1577557772180">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1577112523172" />
+    <state x="440" y="192" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1577557772180" />
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1577684594840">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1577684594840" />
     <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576856065657" />
-    <state width="1638" height="384" key="GridCell.Tab.0.bottom" timestamp="1577556008355">
+    <state width="1638" height="384" key="GridCell.Tab.0.bottom" timestamp="1577947019770">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008355" />
+    <state width="1638" height="384" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019770" />
     <state width="1638" height="363" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202122" />
-    <state width="1638" height="384" key="GridCell.Tab.0.center" timestamp="1577556008353">
+    <state width="1638" height="384" key="GridCell.Tab.0.center" timestamp="1577947019768">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008353" />
+    <state width="1638" height="384" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019768" />
     <state width="1638" height="363" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202120" />
-    <state width="1638" height="384" key="GridCell.Tab.0.left" timestamp="1577556008351">
+    <state width="1638" height="384" key="GridCell.Tab.0.left" timestamp="1577947019767">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008351" />
+    <state width="1638" height="384" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019767" />
     <state width="1638" height="363" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202110" />
-    <state width="1638" height="384" key="GridCell.Tab.0.right" timestamp="1577556008355">
+    <state width="1638" height="384" key="GridCell.Tab.0.right" timestamp="1577947019769">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1577556008355" />
+    <state width="1638" height="384" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019769" />
     <state width="1638" height="363" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202121" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1576901202566">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -280,10 +278,10 @@
       <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state x="494" y="333" key="com.intellij.ide.util.TipDialog/0.23.1680.951@0.23.1680.951" timestamp="1575291057926" />
-    <state x="514" y="189" width="651" height="672" key="find.popup" timestamp="1577365585557">
+    <state x="514" y="189" width="651" height="672" key="find.popup" timestamp="1577694936207">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="514" y="189" width="651" height="672" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1577365585557" />
+    <state x="514" y="189" width="651" height="672" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1577694936207" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
