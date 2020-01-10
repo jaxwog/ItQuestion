@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afa5ef8b-b0d0-48cc-9dd7-786f21035746" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/generic/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/FastJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/json/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/ISerivice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/ISubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/MyInvocationHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/ProxyStatic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/wyz/design/proxy/RealSubject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,13 +76,26 @@
       <recent name="$PROJECT_DIR$/src/com/wyz/arsc" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client (1)">
+  <component name="RunManager" selected="Application.Client (2)">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wyz.design.json.Client" />
       <module name="ItQuestion" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.wyz.design.json.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wyz.design.proxy.Client" />
+      <module name="ItQuestion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wyz.design.proxy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,19 +129,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wyz.design.strategy.Client" />
-      <module name="ItQuestion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wyz.design.strategy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wyz.Main" />
       <module name="ItQuestion" />
@@ -146,17 +144,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.Client (4)" />
-      <item itemvalue="Application.Client" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Client (5)" />
       <item itemvalue="Application.Client (1)" />
+      <item itemvalue="Application.Client (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (2)" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Client (5)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Client (4)" />
         <item itemvalue="Application.Client (4)" />
       </list>
     </recent_temporary>
@@ -198,15 +196,6 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -224,34 +213,38 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="192" key="#Notifications" timestamp="1578362564085">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="192" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1578362564085" />
     <state x="440" y="192" key="#Project_Structure" timestamp="1577557772180">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1577557772180" />
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1577684594840">
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1578364420334">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1577684594840" />
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578364420334" />
     <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576856065657" />
-    <state width="1638" height="384" key="GridCell.Tab.0.bottom" timestamp="1577947019770">
+    <state width="1638" height="282" key="GridCell.Tab.0.bottom" timestamp="1578472181001">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019770" />
+    <state width="1638" height="282" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578472181001" />
     <state width="1638" height="363" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202122" />
-    <state width="1638" height="384" key="GridCell.Tab.0.center" timestamp="1577947019768">
+    <state width="1638" height="282" key="GridCell.Tab.0.center" timestamp="1578472181001">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019768" />
+    <state width="1638" height="282" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578472181001" />
     <state width="1638" height="363" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202120" />
-    <state width="1638" height="384" key="GridCell.Tab.0.left" timestamp="1577947019767">
+    <state width="1638" height="282" key="GridCell.Tab.0.left" timestamp="1578472181000">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019767" />
+    <state width="1638" height="282" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578472181000" />
     <state width="1638" height="363" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202110" />
-    <state width="1638" height="384" key="GridCell.Tab.0.right" timestamp="1577947019769">
+    <state width="1638" height="282" key="GridCell.Tab.0.right" timestamp="1578472181001">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="384" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1577947019769" />
+    <state width="1638" height="282" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578472181001" />
     <state width="1638" height="363" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202121" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1576901202566">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -269,10 +262,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="363" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576901202565" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1576857947649">
+    <state x="341" y="164" key="SettingsEditor" timestamp="1578363739743">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1575292170200" />
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1578363739743" />
     <state x="341" y="164" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1576857947649" />
     <state x="494" y="333" key="com.intellij.ide.util.TipDialog" timestamp="1575291057926">
       <screen x="0" y="23" width="1680" height="951" />
