@@ -3,9 +3,6 @@ package com.wyz;
 
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import com.wyz.array.*;
-import com.wyz.hlm.Handler;
-import com.wyz.hlm.Looper;
-import com.wyz.hlm.Message;
 import com.wyz.j2ee.ArraySearch;
 import com.wyz.linearlist.SeqList;
 import com.wyz.linearlist.SinglyLinkedList;
@@ -13,7 +10,6 @@ import com.wyz.linearlist.SinglyLinkedList_reverse;
 import com.wyz.linearlist.SortedSinglyLinkedList;
 import com.wyz.recursion.DigitTower;
 import com.wyz.recursion.Fibonacci;
-import com.wyz.stack.PriorityQueue;
 import com.wyz.stack.Process;
 import com.wyz.stack.*;
 import com.wyz.test.CharacterParser;
@@ -33,7 +29,10 @@ import java.math.BigDecimal;
 import java.security.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -225,49 +224,49 @@ public class Main {
 //        encrypByMD5("test5a6d2bd272588e09448e746862cfa16c9328453fbffdddcff2218fc3");
           //=======================================================================================
         //模拟安卓消息队列
-        Looper.prepare();//初始化
-        //主线程
-        Handler handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                System.out.println(Thread.currentThread().getName()+",接收到消息"+msg.toString());
-            }
-        };
-
-
-        //子线程
-        for (int i = 0; i < 10; i++) {
-            new Thread(){
-                @Override
-                public void run() {
-                   while (true){
-                       Message msg = new Message();
-                       msg.what = 1;
-                       synchronized (UUID.class){
-                           msg.obj = Thread.currentThread().getName()+"，发送消息"+UUID.randomUUID().toString();
-                       }
-                       System.out.println(msg.toString());
-                       handler.sendMessage(msg);
-                       try {
-                           Thread.sleep((long) (1000*Math.random()));
-                       } catch (InterruptedException e) {
-                           e.printStackTrace();
-                       }
-                   }
-                }
-            }.start();
-
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println("我执行完成了"+Thread.currentThread().getName());
-                }
-            });
-
-        }
-
-
-        Looper.loop();//开始轮询
+//        Looper.prepare();//初始化
+//        //主线程
+//        Handler handler = new Handler(){
+//            @Override
+//            public void handleMessage(Message msg) {
+//                System.out.println(Thread.currentThread().getName()+",接收到消息"+msg.toString());
+//            }
+//        };
+//
+//
+//        //子线程
+//        for (int i = 0; i < 10; i++) {
+//            new Thread(){
+//                @Override
+//                public void run() {
+//                   while (true){
+//                       Message msg = new Message();
+//                       msg.what = 1;
+//                       synchronized (UUID.class){
+//                           msg.obj = Thread.currentThread().getName()+"，发送消息"+UUID.randomUUID().toString();
+//                       }
+//                       System.out.println(msg.toString());
+//                       handler.sendMessage(msg);
+//                       try {
+//                           Thread.sleep((long) (1000*Math.random()));
+//                       } catch (InterruptedException e) {
+//                           e.printStackTrace();
+//                       }
+//                   }
+//                }
+//            }.start();
+//
+//            handler.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    System.out.println("我执行完成了"+Thread.currentThread().getName());
+//                }
+//            });
+//
+//        }
+//
+//
+//        Looper.loop();//开始轮询
         //=======================================================================================
 
 //        FutureTest.test();
@@ -297,13 +296,27 @@ public class Main {
 //        System.out.println("传入长度=224,计算后长度="+tableSizeFor(224));
 
 
-        binaryTree();
+//        binaryTree();
 
-        System.out.println(dateCycle("2019-04-24 14:14"));
-
+//        System.out.println(dateCycle("2019-04-24 14:14"));
+        System.out.println(checkEmail("王永政@gmail.com"));
         System.out.println("\nTest End！");
 
     }
+
+    public static boolean checkEmail(String email) {
+        boolean flag;
+        try {
+            String check = "^([a-z0-9A-Z\u4e00-\u9fa5]+[\\-|\\_|\\.]?)+[a-z0-9A-Z\u4e00-\u9fa5-_]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+            Pattern regex = Pattern.compile(check);
+            Matcher matcher = regex.matcher(email);
+            flag = matcher.matches();
+        } catch (Exception var5) {
+            flag = false;
+        }
+        return flag;
+    }
+
     static void binaryTreeHH(){
         TestHH hh = new TestHH();
         String temp = "ABD##E##C#F##";

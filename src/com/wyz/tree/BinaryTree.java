@@ -133,8 +133,10 @@ public class BinaryTree {
     }
 
     /**
-     * 前序遍历-----迭代
+     * 前序遍历-----迭代  D L R 中 左 右
      * 先打印父结点，然后在打印左子树结点，最后答应右子树结点
+     * 前序遍历适合于快速排序效果
+     * @see com.wyz.array.SortedArray
      */
     public void preOrder(TreeNode node){
         if (node==null){
@@ -172,23 +174,25 @@ public class BinaryTree {
     }
 
     /**
-     *中序遍历
+     * 中序遍历  L D R  左 中 右
      * 先打印最左边的终端结点、其次打印父结点、再打印右边终端节点
+     * 汉诺塔也是这种结构
      */
     public void midOrder(TreeNode node){
         if (node==null){
             return;
         }else {
-            midOrder(node.leftChild);
-            System.out.println("midOrder data : "+node.getData());
-            midOrder(node.rightChild);
+            midOrder(node.leftChild);//逻辑
+            System.out.println("midOrder data : "+node.getData());//输出
+            midOrder(node.rightChild);//逻辑
         }
 
     }
 
     /**
-     * 后序遍历
+     * 后序遍历  L R D 左 右 中
      * 先打印最左边的终端结点、其次打印右边终点结点、最后打印父结点
+     * 归并的思想
      */
     public void postOrder(TreeNode node){
         if (node==null){

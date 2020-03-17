@@ -232,7 +232,7 @@ public class SearchBinaryTree {
     /**
      * 查找node结点的后继结点（排序中紧挨着的那个结点）
      * @param node
-     * @return
+     * @return 单独抽出来的函数，不受上面影响
      */
     private TreeNode getNextNode(TreeNode node) {
         if (node==null){

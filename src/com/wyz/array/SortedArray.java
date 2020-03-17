@@ -28,7 +28,8 @@ import java.util.List;
 public class SortedArray {
 
     public static void main(String []args){
-        int[] table = {27,38,65,97,76,13,27,49,55,4};
+//        int[] table = {27,38,65,97,76,13,27,49,55,4};
+        int [] table = {3,1,5,8,2,9,4,6,7};
         System.out.print("原生数组： ");
         print(table);
 //        bubbleSort(table);//冒泡排序
@@ -46,6 +47,7 @@ public class SortedArray {
     /**
      *  1、冒泡排序，相邻的两个元素进行比较，如果前面大于后面就进行交换
      *  加入标记位，如果没有交换说明顺序已经排好，后面的循环就没必要执行了
+     *  5个以下是最优的算法（个位数最好），大概10次左右全部排好
      */
     public static void bubbleSort(int[] table){
         System.out.println("==========冒泡排序======");
@@ -84,6 +86,7 @@ public class SortedArray {
                     min = j;//记住最小元素下标
                 }
             }
+            //如果是最小的不用进行交换,减少了交换次数
             if (min!=i){
                 int temp = table[i];
                 table[i] = table[min];
