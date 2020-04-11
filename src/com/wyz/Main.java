@@ -10,6 +10,7 @@ import com.wyz.linearlist.SinglyLinkedList_reverse;
 import com.wyz.linearlist.SortedSinglyLinkedList;
 import com.wyz.recursion.DigitTower;
 import com.wyz.recursion.Fibonacci;
+import com.wyz.stack.PriorityQueue;
 import com.wyz.stack.Process;
 import com.wyz.stack.*;
 import com.wyz.test.CharacterParser;
@@ -29,10 +30,7 @@ import java.math.BigDecimal;
 import java.security.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -300,7 +298,86 @@ public class Main {
 
 //        System.out.println(dateCycle("2019-04-24 14:14"));
         System.out.println(checkEmail("王永政@gmail.com"));
+
+        add();
         System.out.println("\nTest End！");
+
+    }
+
+
+    static HashMap<String,HashMap> sHashMap = new HashMap<>();
+
+    private static void add(){
+        HashMap<String,Object> map = new HashMap<>();
+        //一分钱
+        map.put("router","health://InsureMallWebActivity");
+        map.put("type","2");
+        sHashMap.put("1fenqian",map);
+        //疫苗查询
+        map = new HashMap<>();
+        map.put("router","main://TLifeWebActivity");
+        map.put("styleType","3");
+        map.put("shareUrl","https://operation.mobile.taikang.com/vaccine/#/query");
+        map.put("shareTitle","问题疫苗秒速查-泰生活");
+        map.put("shareDesc","全面覆盖，精准定位，权威数据，实时更新");
+        map.put("shareImageUrl","http://fans.images.wx.taikang.com/server/operation/logo/30e5fbeee9426410240b0f76b97b6236.jpg");
+        map.put("shareTitleWeibo","问题疫苗秒速查-泰生活\thttps://operation.mobile.taikang.com/vaccine/#/query");
+        map.put("isShare",true);
+        map.put("webUrl","https://operation.mobile.taikang.com/vaccine/#/query");
+        map.put("title","疫苗查询");
+        sHashMap.put("yimiaochaxun",map);
+        //消息中心0
+        map = new HashMap<>();
+        map.put("router","message://MessageCenterActivity");
+        map.put("page_tab",0);
+        sHashMap.put("message",map);
+        //保单服务
+        map = new HashMap<>();
+        map.put("router","main://PolicyServiceActivity");
+        sHashMap.put("insurance_service",map);
+        //我的保单---人寿保单
+        map = new HashMap<>();
+        map.put("router","insurance://PolicyListActivity");
+        sHashMap.put("my_policy",map);
+        //车险保单，保单列表第4个tab
+        map = new HashMap<>();
+        map.put("router","insurance://PolicyListActivity");
+        map.put("tag",3);
+        sHashMap.put("vehicle_baodan",map);
+        //车险保单
+        map = new HashMap<>();
+        map.put("router","insurance://CarPolicyActivity");
+        sHashMap.put("car_policy",map);
+
+
+
+
+//        HashMap<String,Object>  objectHashMap =   mHashMap.get("shimingzhongxin");
+
+
+        Iterator<? extends Map.Entry<String, ?>> iterator = sHashMap.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String, ?> entry1 = iterator.next();
+            HashMap<String,Object>  objectHashMap = sHashMap.get( entry1.getKey());
+            Iterator<? extends Map.Entry<String, ?>> entryIterator = objectHashMap.entrySet().iterator();
+            System.out.println("==========================");
+        while (entryIterator.hasNext()) {
+            Map.Entry<String, ?> entry = entryIterator.next();
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            if (null == value)
+                continue;
+            if (value.getClass() == String.class) {
+                System.out.println("key="+key+"，String=="+(String) value);
+            } else if (value.getClass() == Integer.class) {
+
+                System.out.println("key="+key+"，integer=="+(Integer) value);
+
+            } else if (value.getClass() == Boolean.class) {
+                System.out.println("key="+key+"，Boolean=="+(Boolean) value);
+            }
+        }
+        }
 
     }
 
