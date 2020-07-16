@@ -1,5 +1,7 @@
 package com.wyz.hlm;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -120,6 +122,27 @@ public class MessageQueue {
             lock.unlock();
         }
         return msg;
+    }
+
+    //阻塞队列
+    BlockingQueue<Message> blockingQueue = new ArrayBlockingQueue<>(50);
+
+    public void enqueueMessageb(Message message) {
+        try {
+            blockingQueue.put(message);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //从消息队列中取出消息
+    public Message nextb() {
+        try {
+            return blockingQueue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return  null;
     }
 
 }

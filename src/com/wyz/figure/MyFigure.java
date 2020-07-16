@@ -179,9 +179,11 @@ public class MyFigure {
         System.out.println("访问到了："+i+"顶点");
         isVisited[i] = true;
         queue.add(i);//第一次把v0加到队列
+//        queue.offer(i);
 
         while (!queue.isEmpty()){
          u =   (Integer)(queue.removeFirst()).intValue();
+//         queue.poll();
          w = getFirstNeighbor(u);
 
          while (w !=-1){
@@ -237,7 +239,7 @@ public class MyFigure {
                 }
             }
 
-            System.out.println("顶点："+adjvex[minId]+"权值："+min);
+            System.out.println("起始顶点："+adjvex[minId] +"--->终结顶点："+minId+",权值:"+min);
 
             sum += min;
             lowcost[minId] = 0;
@@ -256,7 +258,51 @@ public class MyFigure {
         }
         System.out.println("最小的权重值为："+sum);
 
-        
+    }
+
+    /**
+     * 广度优先
+     */
+    public void bfs(){
+        for (int i = 0; i < vertexSize; i++) {
+            isVisited[i]=false;
+        }
+        for (int i = 0; i < vertexSize; i++) {
+            if(!isVisited[i]){
+                isVisited[i]=true;
+                System.out.println("visited vertice:"+ i);
+                bfs(i);
+            }
+        }
+    }
+
+    public void bfs(int i) {
+        LinkedList<Integer> queue = new LinkedList<>();
+        //找第一个邻接点
+        int fn = getFirstNeighbor(i);
+        if (fn == -1) {
+            return;
+        }
+        if (!isVisited[fn]) {
+            isVisited[fn] = true;
+            System.out.println("visted vertice:" + fn);
+            queue.offer(fn);
+        }
+        //开始把后面的邻接点都入队
+        int next = getNextNeighbor(i, fn);
+        while (next != -1) {
+            if (!isVisited[next]) {
+                isVisited[next] = true;
+                System.out.println("visted vertice:" + next);
+                queue.offer(next);
+            }
+            next = getNextNeighbor(i, next);
+        }
+        //从队列中取出来一个，重复之前的操作
+        while(!queue.isEmpty()){
+            int point=queue.poll();//v1  v2
+            bfs(point);
+        }
 
     }
 
@@ -291,7 +337,7 @@ public class MyFigure {
         System.out.println("图的广度优先遍历=================");
         graph.broadFirstSearch();
 
-
+        System.out.println("普里姆算法最小生成树=================");
         graph.prim();
 
 

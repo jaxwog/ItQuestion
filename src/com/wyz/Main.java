@@ -297,9 +297,9 @@ public class Main {
 //        binaryTree();
 
 //        System.out.println(dateCycle("2019-04-24 14:14"));
-        System.out.println(checkEmail("王永政@gmail.com"));
+        System.out.println(checkEmail("zqk—1@163.com"));
 
-        add();
+//        add();
         System.out.println("\nTest End！");
 
     }
@@ -313,41 +313,12 @@ public class Main {
         map.put("router","health://InsureMallWebActivity");
         map.put("type","2");
         sHashMap.put("1fenqian",map);
-        //疫苗查询
-        map = new HashMap<>();
-        map.put("router","main://TLifeWebActivity");
-        map.put("styleType","3");
-        map.put("shareUrl","https://operation.mobile.taikang.com/vaccine/#/query");
-        map.put("shareTitle","问题疫苗秒速查-泰生活");
-        map.put("shareDesc","全面覆盖，精准定位，权威数据，实时更新");
-        map.put("shareImageUrl","http://fans.images.wx.taikang.com/server/operation/logo/30e5fbeee9426410240b0f76b97b6236.jpg");
-        map.put("shareTitleWeibo","问题疫苗秒速查-泰生活\thttps://operation.mobile.taikang.com/vaccine/#/query");
-        map.put("isShare",true);
-        map.put("webUrl","https://operation.mobile.taikang.com/vaccine/#/query");
-        map.put("title","疫苗查询");
-        sHashMap.put("yimiaochaxun",map);
         //消息中心0
         map = new HashMap<>();
         map.put("router","message://MessageCenterActivity");
         map.put("page_tab",0);
         sHashMap.put("message",map);
-        //保单服务
-        map = new HashMap<>();
-        map.put("router","main://PolicyServiceActivity");
-        sHashMap.put("insurance_service",map);
-        //我的保单---人寿保单
-        map = new HashMap<>();
-        map.put("router","insurance://PolicyListActivity");
-        sHashMap.put("my_policy",map);
-        //车险保单，保单列表第4个tab
-        map = new HashMap<>();
-        map.put("router","insurance://PolicyListActivity");
-        map.put("tag",3);
-        sHashMap.put("vehicle_baodan",map);
-        //车险保单
-        map = new HashMap<>();
-        map.put("router","insurance://CarPolicyActivity");
-        sHashMap.put("car_policy",map);
+
 
 
 
@@ -449,11 +420,17 @@ public class Main {
     //根据传入数据，转换成2的幂的数据
     static final int tableSizeFor(int cap) {
         int n = cap - 1;
+        System.out.println(get32BitBinString(n));
         n |= n >>> 1;
+        System.out.println(get32BitBinString(n));
         n |= n >>> 2;
+        System.out.println(get32BitBinString(n));
         n |= n >>> 4;
+        System.out.println(get32BitBinString(n));
         n |= n >>> 8;
+        System.out.println(get32BitBinString(n));
         n |= n >>> 16;
+        System.out.println(get32BitBinString(n));
         return (n < 0) ? 1 : (n >= 1 << 30) ? 1 << 30 : n + 1;
     }
 

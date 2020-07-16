@@ -22,9 +22,6 @@ public class GraphKruskal {
     public void miniSpanTreeKruskal() {
         int m,n,sum=0;
         int[] parent = new int[edgeSize];//神奇的数组，下标为起点，值为终点
-        for(int i = 0 ;i<edgeSize;i++){
-            parent[i] = 0;
-        }
 
         for(int i = 0;i<edgeSize;i++){
             n = find(parent,edges[i].begin);

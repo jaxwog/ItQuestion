@@ -1,5 +1,7 @@
 package com.wyz.array;
 
+import java.util.Stack;
+
 /**
  * 动态规划
  * 求两个字符串最长子序列（顺序相同，可以不连续）
@@ -11,6 +13,8 @@ public class LCS {
         LCS lcs = new LCS();
         int findLCS = lcs.findLCS("android", "random");
         System.out.println("最长子序列长度："+findLCS);
+
+        getLCS("android", "random");
 
         /**
          * 最长子序列为4，取右下角的值，动态规划最后结果受前面步骤影响
@@ -81,5 +85,66 @@ public class LCS {
 
         return ab[n-1][m-1];
     }
+
+
+    /**
+     * LCS算法
+     */
+    public static int max(int a,int b){
+        return (a>b)?a:b;
+    }
+    public static void getLCS(String x,String y){
+        char[] s1=x.toCharArray();
+        char[] s2=y.toCharArray();
+        int[][] array=new int[x.length()+1][y.length()+1];
+        //先把第一行和第一列填上零
+        for (int i = 0; i < array[0].length; i++) {
+            array[0][i]=0;
+        }
+        for (int i = 0; i < array.length; i++) {
+            array[i][0]=0;
+        }
+        //使用动态规划的方式填入数据
+        for (int i = 1; i < array.length; i++) {
+            for (int j = 1; j < array[i].length; j++) {
+                if(s1[i-1]==s2[j-1]){//如果相等，左上角加1填入
+                    array[i][j]=array[i-1][j-1]+1;
+                }else{
+                    array[i][j]=Math.max(array[i-1][j],array[i][j-1]);
+                }
+            }
+        }
+        //打印
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        //从后往前找到结果
+        Stack result=new Stack();
+        int i=x.length()-1;
+        int j=y.length()-1;
+        while((i>=0) && (j>=0)){
+            if(s1[i]==s2[j]){
+                result.push(s1[i]);
+                i--;
+                j--;
+            }else{//注意数组和String中的位置有一位差
+                if(array[i+1][j+1-1]>array[i+1-1][j+1]){
+                    j--;
+                }else{
+                    i--;
+                }
+            }
+        }
+        System.out.println("-----");
+        while(!result.isEmpty()){
+            System.out.println(result.pop()+" ");
+        }
+    }
+
+
 
 }

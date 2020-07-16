@@ -36,11 +36,11 @@ public class SortedArray {
 //        selectSort(table);//选择排序
 //        insertSort(table);//直接插入排序
 //        binaryInsertSort(table);//二分法插入排序
-//        shellSort(table);//希尔排序
+        shellSort(table);//希尔排序
 //         heapSort(table);//堆排序
 //        quickSort(table);//快速排序
 //         mergeSort(table);//归并排序
-          basicSort(table);//基数排序
+//          basicSort(table);//基数排序
     }
 
 

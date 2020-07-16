@@ -14,12 +14,12 @@ public class BinarySearch {
 
 //        directBinarySearch(table,49);
 
-//        hanNota(3, 'A', 'B', 'C');
+        hanNota(3, 'A', 'B', 'C');
 
-        int x = gcd(99,55);
-        System.out.println("最大公约数为："+x);
-        long l = calNFact(5);
-        System.out.println("5阶层为："+l);
+//        int x = gcd(99,55);
+//        System.out.println("最大公约数为："+x);
+//        long l = calNFact(5);
+//        System.out.println("5阶层为："+l);
 
     }
 
@@ -45,7 +45,7 @@ public class BinarySearch {
           return   binarySearch(elem,table,middle+1,high);
         }
 
-        return -1;
+        return -(low+1);
     }
 
 
@@ -65,7 +65,7 @@ public class BinarySearch {
                 return middle;
             }
         }
-        return -1;
+        return -(low+1);
     }
 
 
@@ -88,8 +88,8 @@ public class BinarySearch {
     }
 
     private static void move(int n, char from, char to) {
-        System.out.println("第"+n+"块从"+from+"------>"+to);
-        System.out.println("第"+count+++"步从"+from+"------>"+to);
+        System.out.print("第"+n+"块从"+from+"------>"+to);
+        System.out.println("     ||||||||||||--------第"+count+++"步从"+from+"------>"+to);
     }
 
 
