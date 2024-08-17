@@ -5,7 +5,7 @@ public class Process implements Comparable<Process> {
     private String name;    //进程名
     private int priority;     //优先级
 
-    public Process(String name,int priority){
+    public Process(String name, int priority) {
         this.name = name;
         this.priority = priority;
 
@@ -13,7 +13,7 @@ public class Process implements Comparable<Process> {
 
     @Override
     public String toString() {
-        return "("+this.name+","+this.priority+")";
+        return "(" + this.name + "," + this.priority + ")";
     }
 
     @Override

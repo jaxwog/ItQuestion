@@ -9,7 +9,6 @@ package com.wyz.design.factory;
 public abstract class FactoryAbs {
 
     /**
-     *
      * @return （没办法复用）具体生产什么由子类去实现
      */
     public abstract ProductInterface newProductInterface();
@@ -18,11 +17,12 @@ public abstract class FactoryAbs {
 
     /**
      * 导出数据（可以复用的方法）
+     *
      * @param data
      */
-    public void export(String data){
+    public void export(String data) {
         ProductInterface api = newProductInterface();
-        api.export("工厂模式"+data);
+        api.export("工厂模式" + data);
 
     }
 }

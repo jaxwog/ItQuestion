@@ -13,7 +13,7 @@ public class TestArray {
 
     public static void main(String[] args) {
 //        int[] table = {3, 1, 5, 8, 2, 9, 4, 6, 7};
-        int[] table = {583,8,2,6,10,44,138,28,5,1,0,236};//希尔排序
+        int[] table = {583, 8, 2, 6, 10, 44, 138, 28, 5, 1, 0, 236};//希尔排序
         System.out.print("原生数组： ");
         print(table);
         //        bubbleSort4(table);
@@ -29,11 +29,11 @@ public class TestArray {
     }
 
     //基数排序
-    public static void basicSort(int []table){
+    public static void basicSort(int[] table) {
         int maxValue = 0;
         //查找最大值
         for (int i = 0; i < table.length; i++) {
-            if (maxValue<table[i]){
+            if (maxValue < table[i]) {
                 maxValue = table[i];
             }
         }
@@ -41,8 +41,8 @@ public class TestArray {
         //根据最大值，计算出位数
         int times = 0;
 
-        while (maxValue>0){
-            maxValue = maxValue/10;
+        while (maxValue > 0) {
+            maxValue = maxValue / 10;
             times++;
         }
 
@@ -56,16 +56,16 @@ public class TestArray {
         for (int i = 0; i < times; i++) {
 
             for (int j = 0; j < table.length; j++) {
-                int x = table[j] % (int) Math.pow(10,i+1)/(int)Math.pow(10, i);
+                int x = table[j] % (int) Math.pow(10, i + 1) / (int) Math.pow(10, i);
                 ArrayList<Integer> q = queue.get(x);
                 q.add(table[j]);
-                queue.set(x,q);
+                queue.set(x, q);
             }
 
             int count = 0;
 
             for (int j = 0; j < 10; j++) {
-                while (queue.get(j).size()>0){
+                while (queue.get(j).size() > 0) {
                     ArrayList<Integer> q = queue.get(j);
                     table[count++] = q.get(0);
                     q.remove(0);
@@ -74,7 +74,6 @@ public class TestArray {
 
 
         }
-
 
 
     }
@@ -177,86 +176,85 @@ public class TestArray {
 
     //插入排序
     public static void insertSort(int[] table) {
-         //{3, 1, 5, 8, 2, 9, 4, 6, 7}
+        //{3, 1, 5, 8, 2, 9, 4, 6, 7}
         for (int i = 1; i < table.length; i++) {
             int temp = table[i];
             int j;
-            for (j = i-1; j >=0 && temp < table[j] ; j--) {
-                table[j+1] = table[j];
+            for (j = i - 1; j >= 0 && temp < table[j]; j--) {
+                table[j + 1] = table[j];
             }
-            table[j+1] = temp;
+            table[j + 1] = temp;
 
         }
 
     }
 
-    public static void shellSort(int []table){
+    public static void shellSort(int[] table) {
 
-        for (int i = table.length/2; i > 0 ; i/=2) {
+        for (int i = table.length / 2; i > 0; i /= 2) {
 
             for (int j = i; j < table.length; j++) {
                 int temp = table[j];
                 int k;
-                for (k = j-i; k >=0 && temp< table[k]; k-=i) {
-                    table[k+i] = table[k];
+                for (k = j - i; k >= 0 && temp < table[k]; k -= i) {
+                    table[k + i] = table[k];
                 }
-                table[k+i] = temp;
+                table[k + i] = temp;
             }
         }
     }
 
-    public static void heapSort(int []table){
-        if (table==null || table.length<2) return;
+    public static void heapSort(int[] table) {
+        if (table == null || table.length < 2) return;
         buildMaxHeap(table);//创建大堆
 
-        for (int i = table.length-1; i>=1; i--) {
-            swap(table,0,i);
-            maxHeap(table,i,0);
+        for (int i = table.length - 1; i >= 1; i--) {
+            swap(table, 0, i);
+            maxHeap(table, i, 0);
         }
-
 
 
     }
 
     private static void buildMaxHeap(int[] table) {
-        int half = (table.length-1)/2;
+        int half = (table.length - 1) / 2;
         for (int i = half; i >= 0; i--) {
-            maxHeap(table,table.length,i);
+            maxHeap(table, table.length, i);
         }
     }
 
     private static void maxHeap(int[] table, int length, int index) {
         int largest = index;
-        int left = 2*index+1;
-        int right = 2*index+2;
+        int left = 2 * index + 1;
+        int right = 2 * index + 2;
 
-        if (left<length && table[left]> table[largest]){
+        if (left < length && table[left] > table[largest]) {
             largest = left;
         }
 
-        if (right<length && table[right]>table[largest]){
+        if (right < length && table[right] > table[largest]) {
             largest = right;
         }
 
-        if (largest!=index){
-            swap(table,index,largest);
-            maxHeap(table,length,largest);
+        if (largest != index) {
+            swap(table, index, largest);
+            maxHeap(table, length, largest);
         }
     }
 
 
     //快速排序
-    public static void quickSort(int []table){
-        if (table.length>1){
-            quickSort(table,0,table.length-1);
+    public static void quickSort(int[] table) {
+        if (table.length > 1) {
+            quickSort(table, 0, table.length - 1);
         }
 
     }
 
 
     //快速排序
-    private static void quickSort(int[] table,int low,int hight) {
-        if (low<hight) {
+    private static void quickSort(int[] table, int low, int hight) {
+        if (low < hight) {
             int middle = getMiddle(table, low, hight);
             quickSort(table, 0, middle - 1);
             quickSort(table, middle + 1, hight);
@@ -265,13 +263,13 @@ public class TestArray {
 
     private static int getMiddle(int[] table, int low, int hight) {
         int temp = table[low];
-        while (low<hight){
-            while (low < hight && table[hight]>=temp){
+        while (low < hight) {
+            while (low < hight && table[hight] >= temp) {
                 hight--;
             }
             table[low] = table[hight];
 
-            while (low<hight && table[low]<=temp){
+            while (low < hight && table[low] <= temp) {
                 low++;
             }
             table[hight] = table[low];
@@ -282,56 +280,56 @@ public class TestArray {
         return low;
     }
 
-    public static void mergeSort(int table[],int left,int right){
-        if (left==right){
+    public static void mergeSort(int table[], int left, int right) {
+        if (left == right) {
             return;
-        }else {
-            int middle = (left+right)/2;
-            mergeSort(table,left,middle);
-            mergeSort(table,middle+1,right);
-            merge(table,left,middle,right);
+        } else {
+            int middle = (left + right) / 2;
+            mergeSort(table, left, middle);
+            mergeSort(table, middle + 1, right);
+            merge(table, left, middle, right);
         }
     }
 
 
     //合并两个数组
-    private static void merge(int[]table,int left,int middle,int right){
-        int leftSize = middle-left;
-        int rightSize = right-middle+1;
+    private static void merge(int[] table, int left, int middle, int right) {
+        int leftSize = middle - left;
+        int rightSize = right - middle + 1;
         int[] leftArray = new int[leftSize];
         int[] rightArray = new int[rightSize];
 
         for (int i = left; i < middle; i++) {
-            leftArray[i-left] = table[i];
+            leftArray[i - left] = table[i];
         }
 
-        for (int i = middle; i <=right ; i++) {
-            rightArray[i-middle] = table[i];
+        for (int i = middle; i <= right; i++) {
+            rightArray[i - middle] = table[i];
         }
 
-        int i= 0,j = 0,k = left;
+        int i = 0, j = 0, k = left;
 
-        while (i<leftSize && j<rightSize ){
-            if (leftArray[i]<rightArray[j]){
-                table[k++]=leftArray[i++];
-            }else {
-                table[k++]=rightArray[j++];
+        while (i < leftSize && j < rightSize) {
+            if (leftArray[i] < rightArray[j]) {
+                table[k++] = leftArray[i++];
+            } else {
+                table[k++] = rightArray[j++];
             }
         }
 
-        while (i<leftSize){
+        while (i < leftSize) {
             table[k++] = leftArray[i++];
         }
 
-        while (j< rightSize){
+        while (j < rightSize) {
             table[k++] = rightArray[j++];
         }
 
     }
 
-    public static void swap(int table[],int i,int j){
+    public static void swap(int table[], int i, int j) {
         //判断i、j是否越界
-        if (i>=0 && i<table.length && j>=0 && j<table.length && j!=i){
+        if (i >= 0 && i < table.length && j >= 0 && j < table.length && j != i) {
             int temp = table[i];
             table[i] = table[j];
             table[j] = temp;

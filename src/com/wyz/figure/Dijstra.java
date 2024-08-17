@@ -10,8 +10,7 @@ public class Dijstra {
     private int shortTablePath[] = new int[MAX_VEX];// 记录的是v0到某顶点的最短路径和
 
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String s = "我爱你中国\"哈哈哈\"";
 
         System.out.println(s);
@@ -43,7 +42,7 @@ public class Dijstra {
             //找出shortTablePath中最小的值并且没有找到的数据
             //获取有交点的顶点的下标
             for (int j = 0; j < graph.getVertexSize(); j++) {
-                if (!isgetPath[j] && shortTablePath[j]<min){
+                if (!isgetPath[j] && shortTablePath[j] < min) {
                     min = shortTablePath[j];//找到最小的值
                     k = j;//最小值的位置
                 }
@@ -56,15 +55,15 @@ public class Dijstra {
             for (int j = 0; j < graph.getVertexSize(); j++) {
                 //当该位置没有找到最小值，并且最小值+该行的权值如果小于存储最短路径的值，则把最短路径进行重新赋值
                 //graph.getMatrix()[k][j] 表示Vk到Vx的权值+min表示间接的V0到Vx的权值
-                if (!isgetPath[j] && (min+graph.getMatrix()[k][j])< shortTablePath[j] ){
-                    shortTablePath[j] = min+graph.getMatrix()[k][j];
+                if (!isgetPath[j] && (min + graph.getMatrix()[k][j]) < shortTablePath[j]) {
+                    shortTablePath[j] = min + graph.getMatrix()[k][j];
                 }
             }
 
         }
 
-        for(int i = 0;i<shortTablePath.length;i++){
-            System.out.println("V0到V"+i+"的最短路径为:"+shortTablePath[i]+"\n");
+        for (int i = 0; i < shortTablePath.length; i++) {
+            System.out.println("V0到V" + i + "的最短路径为:" + shortTablePath[i] + "\n");
         }
 
 

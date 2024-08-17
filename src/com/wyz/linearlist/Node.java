@@ -2,8 +2,7 @@ package com.wyz.linearlist;
 
 
 /**
- * @param <T>单链表结点类，T指定结点的元素类型
- *自引用的类：一个类声明包含一个引用当前类的对象的成员变量（如下next）
+ * @param <T>单链表结点类，T指定结点的元素类型 自引用的类：一个类声明包含一个引用当前类的对象的成员变量（如下next）
  */
 public class Node<T> {
     public T data;                               //数据域，保存数据元素
@@ -15,8 +14,8 @@ public class Node<T> {
         this.next = next;
     }
 
-    public Node(){
-        this(null,null);
+    public Node() {
+        this(null, null);
     }
 
     //4、Node类可声明以下方法：
@@ -26,7 +25,7 @@ public class Node<T> {
 
     public boolean equals(Object obj)            //比较两个结点值是否相等，覆盖Object类的equals(obj)方法
     {
-        return obj==this || obj instanceof Node && this.data.equals(((Node<T>)obj).data);
+        return obj == this || obj instanceof Node && this.data.equals(((Node<T>) obj).data);
     }
 
 }

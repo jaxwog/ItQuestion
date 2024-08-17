@@ -8,13 +8,18 @@ package com.wyz.array;
  * 大写字母表示表，小写字母表示原子
  */
 public interface GGenList<T> {
-/*           */
+    /*           */
 
-   //判断广义表是否为空
+    //判断广义表是否为空
     boolean isEmpty();
+
     int length();                  //返回广义表长度
+
     int depth();                    //返回广义表深度
-    GenListNode<T>insert(int i,T x);     //插入原子x作为第i个元素
-    GenListNode<T>insert(int i,GenList<T>glist);     //插入子表作为第i个元素
+
+    GenListNode<T> insert(int i, T x);     //插入原子x作为第i个元素
+
+    GenListNode<T> insert(int i, GenList<T> glist);     //插入子表作为第i个元素
+
     void remove(int i);                   //删除第i个元素
 }

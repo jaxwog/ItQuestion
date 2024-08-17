@@ -1,14 +1,22 @@
 package com.wyz.linearlist;
 
-public interface LList <T>{
+public interface LList<T> {
     boolean isEmpty();   //判断线性表是否为空
+
     int length();                //返回线性表长度
+
     T get(int i);                 //返回第i号元素
+
     void set(int i, T x);     //设置第i号元素值为x
+
     void insert(int i, T x); //插入x作为第i号元素
+
     void append(T x);      //在线性表最后插入元素x
+
     T remove(int i);          //删除第i号元素并返回被删除的元素
+
     void removeAll();      //删除线性表所有元素
+
     T search(T key);        //查找，返回首次出现关键字为key的元素。
 
 /**

@@ -21,7 +21,7 @@ public class HuffmanTree {
         TreeNode<String> node = new TreeNode("good", 50);
         list.add(node);
         list.add(new TreeNode("morning", 10));
-        TreeNode<String> node2 =new TreeNode("afternoon", 20);
+        TreeNode<String> node2 = new TreeNode("afternoon", 20);
         list.add(node2);
         list.add(new TreeNode("hell", 110));
         list.add(new TreeNode("hi", 200));
@@ -32,7 +32,7 @@ public class HuffmanTree {
     }
 
     public TreeNode createHuffManTree(ArrayList<TreeNode> list) {
-        while (list.size()>1){
+        while (list.size() > 1) {
             //首先进行排序，树重下往上构建
             Collections.sort(list);
             TreeNode left = list.get(list.size() - 1);
@@ -57,7 +57,7 @@ public class HuffmanTree {
         //队列，先进先出
         LinkedList<TreeNode> list = new LinkedList<>();
         list.add(treeNode);//入队
-        while (!list.isEmpty()){
+        while (!list.isEmpty()) {
             TreeNode node = list.pop();
             System.out.println(node.data);
             if (node.leftChild != null) {
@@ -89,13 +89,9 @@ public class HuffmanTree {
     }
 
 
-
-
-
-
-
     /**
      * 结点
+     *
      * @param <T>
      */
     public static class TreeNode<T> implements Comparable<TreeNode<T>> {

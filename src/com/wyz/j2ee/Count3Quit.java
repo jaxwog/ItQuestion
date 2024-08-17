@@ -2,10 +2,10 @@ package com.wyz.j2ee;
 
 
 public class Count3Quit {
-    boolean []arr;
+    boolean[] arr;
     int arrayLength;
 
-    public Count3Quit(boolean  []array){
+    public Count3Quit(boolean[] array) {
         this.arr = array;
         this.arrayLength = array.length;
     }
@@ -14,12 +14,12 @@ public class Count3Quit {
 
     int index = 0;//记录数组下标
 
-   public  void quit(){
-        while (arrayLength>1){
+    public void quit() {
+        while (arrayLength > 1) {
 
-            if (arr[index]==true){
+            if (arr[index] == true) {
                 count++;
-                if (count==3){
+                if (count == 3) {
                     arr[index] = false;
                     arrayLength--;
                     count = 0;
@@ -28,23 +28,18 @@ public class Count3Quit {
 
             index++;
 
-            if (index== arr.length){
+            if (index == arr.length) {
                 index = 0;
             }
 
         }
-       for (int i = 0; i < arr.length; i++) {
-           if (arr[i]==true){
-               System.out.print("我是第"+(i+1)+"个数");
-           }
-       }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == true) {
+                System.out.println("我是第" + (i + 1) + "个数");
+            }
+        }
 
     }
-
-
-
-
-
 
 
 }

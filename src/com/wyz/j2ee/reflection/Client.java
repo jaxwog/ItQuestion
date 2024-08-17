@@ -19,16 +19,16 @@ import java.util.ArrayList;
  *   4)基本的数据类型
  *       void关键字  都存在类类型
  *   5)Class类的基本API操作
- *
+ * <p>
  * 2.方法的反射
  * 1）如何获取某个方法
- *     方法的名称和方法的参数列表才能唯一决定某个方法
+ * 方法的名称和方法的参数列表才能唯一决定某个方法
  * 2)方法反射的操作
- *    method.invoke(对象，参数列表)
+ * method.invoke(对象，参数列表)
  * 3)为什么要用方法的反射
- *     why?指定方法名称调用方法
- *     举个实际应用的案例  ---->通过标准JavaBean的属性名获取其属性值
- *     BeanUtil类
+ * why?指定方法名称调用方法
+ * 举个实际应用的案例  ---->通过标准JavaBean的属性名获取其属性值
+ * BeanUtil类
  * 4)通过Class,Method来认识泛型的本质
  */
 public class Client {

@@ -4,6 +4,8 @@ package com.wyz;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import com.wyz.array.*;
 import com.wyz.j2ee.ArraySearch;
+import com.wyz.j2ee.Count3Quit;
+import com.wyz.j2ee.Count3Quit2;
 import com.wyz.linearlist.SeqList;
 import com.wyz.linearlist.SinglyLinkedList;
 import com.wyz.linearlist.SinglyLinkedList_reverse;
@@ -83,16 +85,16 @@ public class Main {
 //        TestNumber.sortArray11(new int[]{2,4,6,8,1,3,5,7,9});
 
 
-//        boolean []arr = new boolean[500];
-//        for (int i = 0; i < arr.length; i++) {
-//            arr[i] = true;
-//        }
+        boolean []arr = new boolean[500];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = true;
+        }
 //
-//        Count3Quit cout = new Count3Quit(arr);
-//        cout.quit();
+        Count3Quit cout = new Count3Quit(arr);
+        cout.quit();
 
-//        Count3Quit2 test = new Count3Quit2();
-//        test.start();
+        Count3Quit2 test = new Count3Quit2();
+        test.start();
 
 //        String sToDouble = "1,2,3;4,5;6,7,8,9";
 //        ArraySearch.stringToDouble(sToDouble);
@@ -301,6 +303,7 @@ public class Main {
 
 //        add();
         System.out.println("\nTest End！");
+        String a = "hello world";
 
     }
 

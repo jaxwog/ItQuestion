@@ -29,12 +29,12 @@ public class RMBTotial {
     private int piece = 0;
     private int sum = 0;
 
-    private int totial(){
-        return piece*sum;
+    private int totial() {
+        return piece * sum;
     }
 
     @Override
     public String toString() {
-        return name+"-"+totial();
+        return name + "-" + totial();
     }
 }

@@ -10,14 +10,14 @@ package com.wyz.recursion;
 //求n！
 public class Factorial {
 
-    public static int factorial(int n){
+    public static int factorial(int n) {
 
-        if (n<0){
-            throw  new IllegalArgumentException("n="+n);   //抛出无效参数异常
+        if (n < 0) {
+            throw new IllegalArgumentException("n=" + n);   //抛出无效参数异常
         }
-        if (n==0 || n==1){      //边界条件
+        if (n == 0 || n == 1) {      //边界条件
             return 1;
         }
-        return n*factorial(n-1);    //递推通式
+        return n * factorial(n - 1);    //递推通式
     }
 }

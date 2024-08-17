@@ -19,13 +19,11 @@ public class BigCount {
         // 高低位对调
         covertData(s1, len1);
         covertData(s2, len2);
-        System.out.println("乘数："+str1);
-        System.out.println("乘数："+str2);
+        System.out.println("乘数：" + str1);
+        System.out.println("乘数：" + str2);
 
         multiply(s1, len1, s2, len2);
     }
-
-
 
 
     /**
@@ -52,7 +50,7 @@ public class BigCount {
             for (int i = 0; i < aLen; i++) {
                 //首要决定十位的为:[0,1] [1,0] 第一个数的个位和第二个数的十位，第一个数的十位和第二个数的个位   和次要[0,0]两个数的个位最大为81，则8表示十位
                 //首先计算两个数的首要决定要素:1、c[i + j] = a[i]*b[j]  2、c[j + i] = a[j]*b[i]，i + j表示对应位置的数据（十位对应的[0,1] [1,0]）
-                c[i + j] +=  Integer.parseInt(String.valueOf(a[i]))* Integer.parseInt(String.valueOf(b[j]));
+                c[i + j] += Integer.parseInt(String.valueOf(a[i])) * Integer.parseInt(String.valueOf(b[j]));
             }
         }
 
@@ -66,7 +64,7 @@ public class BigCount {
         }
 
         // 找到最高位，防止数组最后几位为0的输出（最高位）
-        for (m = cSize - 1; m >= 0;) {
+        for (m = cSize - 1; m >= 0; ) {
             if (c[m] > 0) break;
             m--;
         }

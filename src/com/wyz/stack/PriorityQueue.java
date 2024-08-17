@@ -11,6 +11,7 @@ public class PriorityQueue<T extends Comparable<T>> implements QQueue<T> {
     {
         this.list = new SortedSinglyLinkedList<T>();
     }
+
     @Override
     public boolean isEmpty() {
         return list.isEmpty();

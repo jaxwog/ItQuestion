@@ -8,9 +8,8 @@ import java.util.List;
  */
 
 public class Test {
-    public void test()
-    {
-        Box<? super Number> box=new Box<>();
+    public void test() {
+        Box<? super Number> box = new Box<>();
         //子类引用不能指向父类对象
 //        box.setData(new Object());
         /**
@@ -37,7 +36,7 @@ public class Test {
 //        box=new Box<Object>();
 //        box.setData(new Number() {
 
-        List<? extends Fruit> list=new ArrayList<>();
+        List<? extends Fruit> list = new ArrayList<>();
 //         List<? extends Fruit> list=new ArrayList<? extends Fruit>();
 //        });
 

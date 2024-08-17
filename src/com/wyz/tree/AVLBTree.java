@@ -10,16 +10,16 @@ import java.util.LinkedList;
  */
 public class AVLBTree<E extends Comparable<E>> {
     Node<E> root;
-    int     size = 0;
+    int size = 0;
     private static final int LH = 1;
     private static final int RH = -1;
     private static final int EH = 0;
 
     public static void main(String[] args) {
 //        Integer[] nums={5,8,2,0,1,-2};
-        Integer[] nums={3,2,1,4,5,6,7,10,9,8};
-        AVLBTree<Integer> tree=new AVLBTree<>();
-        for(int i=0;i<nums.length;i++){
+        Integer[] nums = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8};
+        AVLBTree<Integer> tree = new AVLBTree<>();
+        for (int i = 0; i < nums.length; i++) {
             tree.insertElement(nums[i]);
         }
         showAVL((Node) tree.root);
@@ -233,8 +233,8 @@ public class AVLBTree<E extends Comparable<E>> {
     }
 
     public static class Node<E extends Comparable<E>> {
-        E       elemet;
-        int     balance = 0;//平衡因子
+        E elemet;
+        int balance = 0;//平衡因子
         Node<E> left;
         Node<E> right;
         Node<E> parent;

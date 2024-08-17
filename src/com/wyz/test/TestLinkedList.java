@@ -41,45 +41,48 @@ public class TestLinkedList<E> {
 
     /**
      * 添加到最后
+     *
      * @param e
      */
     private void linkLast(E e) {
         Node<E> newNode = new Node<E>(last, e, null);
         Node<E> l = last;
-        last=newNode;
+        last = newNode;
 
-        if(l==null){
-            first=newNode;
-        }else {
+        if (l == null) {
+            first = newNode;
+        } else {
             l.next = newNode;
         }
         size++;
     }
+
     /**
      * 查找位置
      */
-    public E get(int index){
-        if(index<0 || index>size){
+    public E get(int index) {
+        if (index < 0 || index > size) {
             return null;
         }
         return node(index).item;
     }
+
     /**
      * 获取index位置上的节点
      */
-    private Node<E> node(int index){
+    private Node<E> node(int index) {
 
         //如果index在整个链表的前半部分
-        if(index<(size>>1)){   //1000 100   10
-            Node<E> node=first;
+        if (index < (size >> 1)) {   //1000 100   10
+            Node<E> node = first;
             for (int i = 0; i < index; i++) {
-                node=node.next;
+                node = node.next;
             }
             return node;
-        }else{
-            Node<E> node=last;
-            for (int i = size-1; i > index; i--) {
-                node=node.prev;
+        } else {
+            Node<E> node = last;
+            for (int i = size - 1; i > index; i--) {
+                node = node.prev;
             }
             return node;
         }
@@ -90,21 +93,21 @@ public class TestLinkedList<E> {
     /**
      * 添加数据在index位置
      */
-    public void add(int index,E e) {
-        if(index<0 || index>size){
-            return ;
+    public void add(int index, E e) {
+        if (index < 0 || index > size) {
+            return;
         }
-        if(index==size){
+        if (index == size) {
             linkLast(e);
-        }else{
-            Node<E> target=node(index);//  index=2
-            Node<E> pre=target.prev;
-            Node<E> newNode=new Node<E>(pre,e,target);
+        } else {
+            Node<E> target = node(index);//  index=2
+            Node<E> pre = target.prev;
+            Node<E> newNode = new Node<E>(pre, e, target);
 
-            if(pre==null){
-                first=newNode;
+            if (pre == null) {
+                first = newNode;
                 target.prev = newNode;//4
-            }else {
+            } else {
                 pre.next = newNode;//3
                 target.prev = newNode;//4
             }
@@ -116,23 +119,23 @@ public class TestLinkedList<E> {
     /**
      * 删除元素
      */
-    public void remove(int index){
-        Node<E> target=node(index);
+    public void remove(int index) {
+        Node<E> target = node(index);
         unlinkNode(target);
     }
 
     private void unlinkNode(Node<E> p) {//index=2
-        Node<E> pre=p.prev;
-        Node<E> next=p.next;
-        if(pre==null){
-            first=p.next;
-        }else{
-            pre.next=p.next;
+        Node<E> pre = p.prev;
+        Node<E> next = p.next;
+        if (pre == null) {
+            first = p.next;
+        } else {
+            pre.next = p.next;
         }
-        if(next==null){
-            last=p.prev;
-        }else{
-            next.prev=p.prev;
+        if (next == null) {
+            last = p.prev;
+        } else {
+            next.prev = p.prev;
         }
         size--;
     }

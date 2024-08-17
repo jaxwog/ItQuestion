@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AsyncTaskTest {
 
-    public static void test(){
+    public static void test() {
         int CPU_COUNT = Runtime.getRuntime().availableProcessors();  //可用的CPU个数
         int CORE_POOL_SIZE = CPU_COUNT + 1; //5
         int MAXIMUM_POOL_SIZE = CPU_COUNT * 2 + 1; //9
@@ -41,19 +41,19 @@ public class AsyncTaskTest {
         }
     }
 
-    static class MyTask implements Runnable{
+    static class MyTask implements Runnable {
 
         @Override
         public void run() {
 //            System.out.println(Thread.currentThread().getName());
-			while(true){
-				try {
-					System.out.println(Thread.currentThread().getName());
+            while (true) {
+                try {
+                    System.out.println(Thread.currentThread().getName());
 //					Thread.sleep(1000);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }

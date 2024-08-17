@@ -8,6 +8,6 @@ package com.wyz.design.factory;
 public class ProductFile implements ProductInterface {
     @Override
     public void export(String data) {
-        System.out.println("设置类型为：文件"+data);
+        System.out.println("设置类型为：文件" + data);
     }
 }

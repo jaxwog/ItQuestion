@@ -9,16 +9,16 @@ import java.util.LinkedList;
  * TODO:红黑树添加，删除
  */
 public class TestBlackTree<E extends Comparable<E>> {
-    private static final boolean RED   = false;
+    private static final boolean RED = false;
     private static final boolean BLACK = true;
     Node<E> root;
-    int     size ;
+    int size;
 
     public static void main(String[] args) {
-        Integer[] nums={3,2,1,4,5,6,7,10,9};
-        TestBlackTree<Integer> tree=new TestBlackTree<>();
-        for(int i=0;i<nums.length;i++){
-            System.out.println("==================插入了元素："+nums[i]);
+        Integer[] nums = {3, 2, 1, 4, 5, 6, 7, 10, 9};
+        TestBlackTree<Integer> tree = new TestBlackTree<>();
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println("==================插入了元素：" + nums[i]);
             tree.insertElement(nums[i]);
             tree.showAVL(tree.root);
         }
@@ -31,22 +31,22 @@ public class TestBlackTree<E extends Comparable<E>> {
 //        tree.showAVL(tree.root);
     }
 
-    public void LDR(Node node){
-        if (node==null){
+    public void LDR(Node node) {
+        if (node == null) {
             return;
-        }else {
+        } else {
             LDR(node.left);
             System.out.println(node.elemet);
             LDR(node.right);
         }
     }
 
-    public  void showAVL(Node root) {
+    public void showAVL(Node root) {
         LinkedList<Node> list = new LinkedList<Node>();
         list.offer(root);//队列放入
         while (!list.isEmpty()) {
             Node node = list.pop();//队列的取出
-            System.out.println(node.elemet+" ，"+ (node.color ? "黑色":"红色") );
+            System.out.println(node.elemet + " ，" + (node.color ? "黑色" : "红色"));
             if (node.left != null) {
                 list.offer(node.left);
             }
@@ -58,7 +58,7 @@ public class TestBlackTree<E extends Comparable<E>> {
 
     //按照二叉排序树的方式插入一个节点（新节点都为红色）
     public boolean insertElement(E elemet) {
-      Node<E> t = root;
+        Node<E> t = root;
         if (t == null) {
             //如果插入的是根结点，直接将节点涂黑
             root = new Node<E>(elemet, null);
@@ -83,7 +83,7 @@ public class TestBlackTree<E extends Comparable<E>> {
             }
         } while (t != null);
         //循环结束后t=null，parent指向了最后位置，是child父节点
-       Node<E> child = new Node<E>(elemet, parent);
+        Node<E> child = new Node<E>(elemet, parent);
         if (cmp < 0) {
             parent.left = child;
         } else {
@@ -96,52 +96,51 @@ public class TestBlackTree<E extends Comparable<E>> {
     }
 
 
-
     private void fixAfterInsertion(Node<E> x) {
         //插入的节点的父节点是红色（root节点没有父节点）
-        while (x!=null && x!=root && x.parent.color==RED){
+        while (x != null && x != root && x.parent.color == RED) {
             //父节点是祖父节点的左孩子
-            if (parentOf(x)==leftOf(parentOf(parentOf(x)))){
+            if (parentOf(x) == leftOf(parentOf(parentOf(x)))) {
                 //y表示叔叔节点，此时y是祖父节点的右子节点
                 Node<E> y = rightOf(parentOf(parentOf(x)));
                 //如果叔叔节点y是红色
-                if (colorOf(y)==RED){
+                if (colorOf(y) == RED) {
                     //叔叔和父节点涂黑，祖父节点涂红，当前节点指向祖父节点
-                    setColor(parentOf(x),BLACK);
-                    setColor(y,BLACK);
-                    setColor(parentOf(parentOf(x)),RED);
+                    setColor(parentOf(x), BLACK);
+                    setColor(y, BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
                     x = parentOf(parentOf(x));
-                }else {
+                } else {
                     //else 如果叔叔节点y是黑色
 
                     //如果当前节点是父节点的右子节点
-                   if (x==rightOf(parentOf(x))){
-                      // 当前节点指向父节点，当前节点进行左旋
-                       x = parentOf(x);
-                       left_rotate(x);
-                   }
-                   //父节点涂黑，祖父节点涂红，祖父节点进行右旋
-                       setColor(parentOf(x), BLACK);
-                       setColor(parentOf(parentOf(x)), RED);
-                       right_rotate(parentOf(parentOf(x)));
+                    if (x == rightOf(parentOf(x))) {
+                        // 当前节点指向父节点，当前节点进行左旋
+                        x = parentOf(x);
+                        left_rotate(x);
+                    }
+                    //父节点涂黑，祖父节点涂红，祖父节点进行右旋
+                    setColor(parentOf(x), BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    right_rotate(parentOf(parentOf(x)));
                 }
                 //父节点是祖父节点的右子节点
-            }else {
+            } else {
                 Node<E> y = leftOf(parentOf(parentOf(x)));
                 //如果叔叔节点是红色
-                if (colorOf(y)==RED){
-                    setColor(parentOf(x),BLACK);
-                    setColor(y,BLACK);
-                    setColor(parentOf(parentOf(x)),RED);
+                if (colorOf(y) == RED) {
+                    setColor(parentOf(x), BLACK);
+                    setColor(y, BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
                     x = parentOf(parentOf(x));
-                }else {
-                    if (x==leftOf(parentOf(x))){
+                } else {
+                    if (x == leftOf(parentOf(x))) {
                         x = parentOf(x);
                         right_rotate(x);
                     }
-                        setColor(parentOf(x), BLACK);
-                        setColor(parentOf(parentOf(x)), RED);
-                        left_rotate(parentOf(parentOf(x)));
+                    setColor(parentOf(x), BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    left_rotate(parentOf(parentOf(x)));
 
                 }
             }
@@ -149,10 +148,10 @@ public class TestBlackTree<E extends Comparable<E>> {
         root.color = BLACK;
     }
 
-    public  void remove(E key) {
-       Node<E> p = searchNode(key);
+    public void remove(E key) {
+        Node<E> p = searchNode(key);
         if (p == null)
-            return ;
+            return;
         deleteNode(p);
     }
 
@@ -174,7 +173,7 @@ public class TestBlackTree<E extends Comparable<E>> {
             if (p.parent == null)
                 root = replacement;
             else if (p == p.parent.left)
-                p.parent.left  = replacement;
+                p.parent.left = replacement;
             else
                 p.parent.right = replacement;
 
@@ -213,7 +212,7 @@ public class TestBlackTree<E extends Comparable<E>> {
                     sib = rightOf(parentOf(x));
                 }
 
-                if (colorOf(leftOf(sib))  == BLACK &&
+                if (colorOf(leftOf(sib)) == BLACK &&
                         colorOf(rightOf(sib)) == BLACK) {
                     setColor(sib, RED);
                     x = parentOf(x);
@@ -286,24 +285,24 @@ public class TestBlackTree<E extends Comparable<E>> {
         return (p == null ? BLACK : p.color);
     }
 
-    private  Node<E> parentOf(Node<E> p) {
-        return (p == null ? null: p.parent);
+    private Node<E> parentOf(Node<E> p) {
+        return (p == null ? null : p.parent);
     }
 
-    private  void setColor(Node<E> p, boolean c) {
+    private void setColor(Node<E> p, boolean c) {
         if (p != null)
             p.color = c;
     }
 
-    private  Node<E> leftOf(Node<E> p) {
-        return (p == null) ? null: p.left;
+    private Node<E> leftOf(Node<E> p) {
+        return (p == null) ? null : p.left;
     }
 
     private Node<E> rightOf(Node<E> p) {
-        return (p == null) ? null: p.right;
+        return (p == null) ? null : p.right;
     }
 
-    public Node<E> searchNode(E elemet){
+    public Node<E> searchNode(E elemet) {
         Node<E> p = root;
         int cmp;
         while (p != null) {
@@ -371,19 +370,14 @@ public class TestBlackTree<E extends Comparable<E>> {
             y.parent = x;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    public class Node<E extends Comparable<E>>{
-      public   E elemet;
-      public Node<E> left;
-      public Node<E> right;
-      public Node<E> parent;
-      public boolean color = RED;
+
+
+    public class Node<E extends Comparable<E>> {
+        public E elemet;
+        public Node<E> left;
+        public Node<E> right;
+        public Node<E> parent;
+        public boolean color = RED;
 
         public Node(E elemet, Node<E> parent) {
             this.elemet = elemet;

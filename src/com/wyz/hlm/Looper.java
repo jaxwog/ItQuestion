@@ -9,11 +9,11 @@ public final class Looper {
     //looper保存在ThreadLocal中，保证了线程数据的隔离性
     static final ThreadLocal<Looper> sThreadLocal = new ThreadLocal<Looper>();
     //一个Looper对应一个MessageQueue
-   MessageQueue mQueue;
+    MessageQueue mQueue;
 
-   private Looper(){
-       mQueue = new MessageQueue();
-   }
+    private Looper() {
+        mQueue = new MessageQueue();
+    }
 
     /**
      * Looper对象初始化
@@ -27,22 +27,23 @@ public final class Looper {
 
     /**
      * 获取当前线程的Looper对象
+     *
      * @return
      */
-    public static  Looper myLooper() {
+    public static Looper myLooper() {
         return sThreadLocal.get();
     }
 
-    public static void loop(){
+    public static void loop() {
         Looper me = myLooper();
         if (me == null) {
             throw new RuntimeException("No Looper; Looper.prepare() wasn't called on this thread.");
         }
 
         MessageQueue queue = me.mQueue;
-        for (;;){
+        for (; ; ) {
             Message msg = queue.next();
-            if (msg == null){
+            if (msg == null) {
                 continue;
             }
             //转发给Handler
@@ -53,8 +54,6 @@ public final class Looper {
         }
 
     }
-
-
 
 
 }

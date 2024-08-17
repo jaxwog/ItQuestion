@@ -11,20 +11,19 @@ public class ExampleUnitTest {
     public static void main(String[] args) {
         testSwap();
         addition_isCorrect();
-        int [] table = {3,1,5,8,2,9,4,6,7};
-        quickSort(table,0,table.length-1);
+        int[] table = {3, 1, 5, 8, 2, 9, 4, 6, 7};
+        quickSort(table, 0, table.length - 1);
 
 
         for (int i = 0; i < table.length; i++) {
-            System.out.print(table[i]+"  ");
+            System.out.print(table[i] + "  ");
         }
-
 
 
     }
 
     //a和b交换数据
-    public static void testSwap(){
+    public static void testSwap() {
         //空间复杂度+时间复杂度+应用场景（重要）
         int a = 5;
         int b = 6;
@@ -37,24 +36,24 @@ public class ExampleUnitTest {
 //        a = a-b;
 
         //3 性能最优
-        a = a^b;
-        b = a^b;
-        a= a^b;
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
 
-       System.out.println("a = "+a+"---- b = "+b);
+        System.out.println("a = " + a + "---- b = " + b);
     }
 
-    public static void addition_isCorrect(){
-        LinkedList<Mahjong> list=new LinkedList<Mahjong>();
-        list.add(new Mahjong(3,1));
-        list.add(new Mahjong(2,3));
-        list.add(new Mahjong(3,7));
-        list.add(new Mahjong(1,1));
-        list.add(new Mahjong(3,8));
-        list.add(new Mahjong(2,2));
-        list.add(new Mahjong(3,2));
-        list.add(new Mahjong(1,3));
-        list.add(new Mahjong(3,9));
+    public static void addition_isCorrect() {
+        LinkedList<Mahjong> list = new LinkedList<Mahjong>();
+        list.add(new Mahjong(3, 1));
+        list.add(new Mahjong(2, 3));
+        list.add(new Mahjong(3, 7));
+        list.add(new Mahjong(1, 1));
+        list.add(new Mahjong(3, 8));
+        list.add(new Mahjong(2, 2));
+        list.add(new Mahjong(3, 2));
+        list.add(new Mahjong(1, 3));
+        list.add(new Mahjong(3, 9));
         System.out.println(list);
         radixSort(list);
         System.out.println(list);
@@ -68,9 +67,9 @@ public class ExampleUnitTest {
             rankList[i] = new LinkedList();
         }
         //拿出来每个数据，放到点数里面
-        while (list.size()>0){
+        while (list.size() > 0) {
             Mahjong m = list.remove();
-            rankList[m.rank-1].add(m);
+            rankList[m.rank - 1].add(m);
         }
 
         //把9组数据放入到一个链表中
@@ -85,9 +84,9 @@ public class ExampleUnitTest {
         }
 
         //拿出来每个数据，放到花色里面
-        while (list.size()>0){
+        while (list.size() > 0) {
             Mahjong m = list.remove();
-            suitList[m.suit-1].add(m);
+            suitList[m.suit - 1].add(m);
         }
         //把3组花色放入到一个链表中
         for (int i = 0; i < suitList.length; i++) {
@@ -99,49 +98,48 @@ public class ExampleUnitTest {
 
     /**
      * 快速排序     31  21  59  68  12  40
+     *
      * @see com.wyz.array.SortedArray
      * @see com.wyz.tree.BinaryTree
      */
-    private static void quickSort(int[] array,int begin,int end){
-        if(end-begin<=0) return;
-        int x=array[begin];
-        int low=begin;//0
-        int high=end;//5
+    private static void quickSort(int[] array, int begin, int end) {
+        if (end - begin <= 0) return;
+        int x = array[begin];
+        int low = begin;//0
+        int high = end;//5
         //由于会从两头取数据，需要一个方向
-        boolean direction=true;
+        boolean direction = true;
         //跳出循环执行L1操作，相当于goto
         L1:
-        while(low<high){
-            if(direction){//从右往左找
-                for(int i=high;i>low;i--){
-                    if(array[i]<=x){
-                        array[low++]=array[i];
-                        high=i;
-                        direction=!direction;
+        while (low < high) {
+            if (direction) {//从右往左找
+                for (int i = high; i > low; i--) {
+                    if (array[i] <= x) {
+                        array[low++] = array[i];
+                        high = i;
+                        direction = !direction;
                         continue L1;
                     }
                 }
-                high=low;//如果上面的if从未进入，让两个指针重合
-            }else{
-                for(int i=low;i<high;i++){
-                    if(array[i]>=x){
-                        array[high--]=array[i];
-                        low=i;
-                        direction=!direction;
+                high = low;//如果上面的if从未进入，让两个指针重合
+            } else {
+                for (int i = low; i < high; i++) {
+                    if (array[i] >= x) {
+                        array[high--] = array[i];
+                        low = i;
+                        direction = !direction;
                         continue L1;
                     }
                 }
-                low=high;
+                low = high;
             }
         }
         //把最后找到的值 放入中间位置
-        array[low]=x;
+        array[low] = x;
         //开始完成左右两边的操作
-        quickSort(array,begin,low-1);
-        quickSort(array,low+1,end);
+        quickSort(array, begin, low - 1);
+        quickSort(array, low + 1, end);
     }
-
-
 
 
 }

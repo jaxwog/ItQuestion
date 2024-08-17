@@ -6,12 +6,11 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
 
-
-    public void simpleTest(){
+    public void simpleTest() {
         //.表示任何字符
         p("abc".matches("..."));
         // \d表示数字
-        p("a23412b".replaceAll("\\d","-"));
+        p("a23412b".replaceAll("\\d", "-"));
 
         //[a-z] 表示字母中a到z ，{3}表示a到z出现次数
         //好处是程序编译时候就加载，省却调用时加载
@@ -25,7 +24,7 @@ public class StringUtils {
 
 
     //  .  *  +  ?
-    public void simpleTest1(){
+    public void simpleTest1() {
 
         p("a".matches("."));
         p("aa".matches("aa"));
@@ -44,14 +43,13 @@ public class StringUtils {
         // 适配. 需要\\. 方式
         p("192.168.1.1".matches("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"));
         p("192.168.0.aaa".matches("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"));
-          //[0-2] 表示0到2 区间（0与2包括在内 ）,匹配一个字符  1是不是属于[0-2]
+        //[0-2] 表示0到2 区间（0与2包括在内 ）,匹配一个字符  1是不是属于[0-2]
         p("192".matches("[0-2][0-9][0-9]"));
-
 
 
     }
 
-    public void simpleTest2(){
+    public void simpleTest2() {
         //字符串a是否在规则里面（abc 中的一个）
         p("a".matches("[abc]"));
         //^表示除了adc以外的其它字符
@@ -67,7 +65,7 @@ public class StringUtils {
     }
 
 
-    public void simpleTest3(){
+    public void simpleTest3() {
         // \s表示空白字符
         p(" \n\r\t".matches("\\s{4}"));
         //  \S非空白字符
@@ -80,7 +78,7 @@ public class StringUtils {
         p("\\".matches("\\\\"));
     }
 
-    public void simpleTest4(){
+    public void simpleTest4() {
         // 小写字母字符[a-z]
         p("a".matches("\\p{Lower}"));
         // ^h.* 以h开头，后面跟着0个或者多个字符
@@ -104,7 +102,7 @@ public class StringUtils {
 
     }
 
-    public void simpleTest5(){
+    public void simpleTest5() {
 //        [\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?
         p("asdfasdfsafsf@dsdfsdf.com".matches("[\\w[.-]]+@[\\w[.-]]+\\.[\\w]+"));
 //        \d{3}-\d{8}|\d{4}-\{7,8}  适配电话号码
@@ -140,19 +138,19 @@ public class StringUtils {
 
     }
 
-    public void simpleTest6(){
+    public void simpleTest6() {
 
         // 忽略大小写，Pattern.CASE_INSENSITIVE标志
         Pattern p = Pattern.compile("java", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher("java Java JAVa JaVa IloveJAVA you hateJava afasdfasdf");
         StringBuffer buf = new StringBuffer();
-        int i=0;
+        int i = 0;
         // 实现非终端的添加和替换步骤
-        while(m.find()) {
+        while (m.find()) {
             //打印出来正则表达式匹配的子串
             p(m.group());
             i++;
-            if(i%2 == 0) {
+            if (i % 2 == 0) {
                 m.appendReplacement(buf, "java");
             } else {
                 m.appendReplacement(buf, "JAVA");
@@ -163,13 +161,14 @@ public class StringUtils {
         p(buf);
 
     }
+
     public void simpleTest7() {
         //分组：()表示，从左边开始，有多少个小括号就表示是第几组
         // matcher.group(1) 表示输出第一组数据（3到5为数字）
         Pattern pattern = Pattern.compile("(\\d{3,5})([a-z]{2})");
         String s = "123aa-34345bb-234cc-00";
         Matcher matcher = pattern.matcher(s);
-        while (matcher.find()){
+        while (matcher.find()) {
             p(matcher.group(1));
         }
 
@@ -223,7 +222,7 @@ public class StringUtils {
         p("JavA".matches("(?i)(java)"));
     }
 
-//    号码以10、11、12、95、400、800、非0（包含区号）等开头
+    //    号码以10、11、12、95、400、800、非0（包含区号）等开头
     public void simpleTest11() {
 
 //        Pattern p = Pattern.compile("^(00)\\d{3}f$");
@@ -237,7 +236,7 @@ public class StringUtils {
         String telNo = "23925626008";
 //        p(!telNo.matches("^0\\d+"));
 
-        if (telNo.matches("\\d{11,12}") && !telNo.matches("^0\\d+") ){
+        if (telNo.matches("\\d{11,12}") && !telNo.matches("^0\\d+")) {
             System.out.println("------");
         }
     }
@@ -250,7 +249,7 @@ public class StringUtils {
         String s = "北京市昌平区生命科学园区万科生物中心";
         Matcher m = p.matcher(s);
         while (m.find()) {
-            p(m.group().replace("区",""));
+            p(m.group().replace("区", ""));
 
 
         }
@@ -259,8 +258,7 @@ public class StringUtils {
     }
 
 
-
-    public static void p(Object o){
+    public static void p(Object o) {
         System.out.println(o.toString());
     }
 

@@ -10,14 +10,14 @@ public class StreamAndRead {
 
 
     //字节流读取文件，中文显示乱码（中文占用两个字节，需要采用字符流读取）
-    public static void testFileInputStream(){
+    public static void testFileInputStream() {
         FileInputStream inputStream = null;
         int b = 0;
-        long num=0;
+        long num = 0;
         try {
             inputStream = new FileInputStream("/Users/wangyongzheng/Downloads/TestFileInputStream.java");
-            while ((b=inputStream.read())!=-1){
-                System.out.print((char)b);
+            while ((b = inputStream.read()) != -1) {
+                System.out.print((char) b);
                 num++;
             }
 
@@ -32,24 +32,24 @@ public class StreamAndRead {
             e.printStackTrace();
         }
 
-        System.out.println("输出字节为："+num);
+        System.out.println("输出字节为：" + num);
 
     }
 
 
-    public static void testFileOutputStream(){
+    public static void testFileOutputStream() {
         FileInputStream inputStream = null;
         FileOutputStream outputStream = null;
-        int b =0;
+        int b = 0;
 
         try {
             inputStream = new FileInputStream("/Users/wangyongzheng/Downloads/TestFileInputStream.java");
             //如果该文件不存在，则会创建TestFile.java文件，不能创建目录
             outputStream = new FileOutputStream("/Users/wangyongzheng/Downloads/TestFile.java");
-            while ((b = inputStream.read())!=-1){
+            while ((b = inputStream.read()) != -1) {
                 outputStream.write(b);
             }
-           System.out.println("文件复制成功");
+            System.out.println("文件复制成功");
         } catch (FileNotFoundException e) {
             System.out.println("没有发现文件");
             System.exit(-1);
@@ -58,7 +58,7 @@ public class StreamAndRead {
             System.out.println("文件读取错误");
             System.exit(-1);
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 inputStream.close();
                 outputStream.close();
@@ -70,14 +70,14 @@ public class StreamAndRead {
 
     }
 
-    public static void testFileReader(){
+    public static void testFileReader() {
         FileReader inputStream = null;
         int b = 0;
-        long num=0;
+        long num = 0;
         try {
             inputStream = new FileReader("/Users/wangyongzheng/Downloads/TestFileInputStream.java");
-            while ((b=inputStream.read())!=-1){
-                System.out.print((char)b);
+            while ((b = inputStream.read()) != -1) {
+                System.out.print((char) b);
                 num++;
             }
 
@@ -92,11 +92,11 @@ public class StreamAndRead {
             e.printStackTrace();
         }
 
-        System.out.println("输出字节为："+num);
+        System.out.println("输出字节为：" + num);
 
     }
 
-    public static void testBufferedWriter(){
+    public static void testBufferedWriter() {
         FileWriter fileWriter = null;
         FileReader fileReader = null;
 
@@ -120,7 +120,7 @@ public class StreamAndRead {
             fileReader = new FileReader("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt");
             BufferedReader reader = new BufferedReader(fileReader);
             String s = null;
-            while ((s = reader.readLine())!=null){
+            while ((s = reader.readLine()) != null) {
                 System.out.println(s);//s输入到内存分配的区域中
             }
 
@@ -133,7 +133,7 @@ public class StreamAndRead {
 
     }
 
-    public static void testOutStreamWriter(){
+    public static void testOutStreamWriter() {
         FileOutputStream stream = null;
         try {
             stream = new FileOutputStream("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt");
@@ -149,8 +149,8 @@ public class StreamAndRead {
 
         try {
             //true 表示在文件后面直接添加
-            stream = new FileOutputStream("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt",true);
-            OutputStreamWriter streamWriter = new OutputStreamWriter(stream,"UTF8");//指定字符编码
+            stream = new FileOutputStream("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt", true);
+            OutputStreamWriter streamWriter = new OutputStreamWriter(stream, "UTF8");//指定字符编码
             streamWriter.write("\n我是谁呢？欢迎来到中兴体验社区");
 
             System.out.println(streamWriter.getEncoding());
@@ -164,25 +164,25 @@ public class StreamAndRead {
     }
 
     //阻塞方式输入键盘事件
-    public static void testInStreamReader(){
+    public static void testInStreamReader() {
         InputStreamReader reader = null;
         reader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(reader);
         String s = null;
         try {
             s = bufferedReader.readLine();
-            while (s!=null){
-                if (s.equalsIgnoreCase("exit"))break;
+            while (s != null) {
+                if (s.equalsIgnoreCase("exit")) break;
                 System.out.println(s.toUpperCase());
                 s = bufferedReader.readLine();
             }
-          bufferedReader.close();
+            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void testDataStream(){
+    public static void testDataStream() {
         //输出字节数组,在内存中保留
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
@@ -204,20 +204,20 @@ public class StreamAndRead {
 
     }
 
-    public static void testPrintStream(){
+    public static void testPrintStream() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = null;
         try {
-            FileWriter fileWriter = new FileWriter("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt",true);
+            FileWriter fileWriter = new FileWriter("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt", true);
             PrintWriter printWriter = new PrintWriter(fileWriter);
-            while ((s = br.readLine())!=null){
-                if (s.equalsIgnoreCase("exit"))break;
+            while ((s = br.readLine()) != null) {
+                if (s.equalsIgnoreCase("exit")) break;
                 System.out.println(s);
                 printWriter.println("------------------------");
                 printWriter.println(s);
                 printWriter.flush();
             }
-            printWriter.println("======="+new Date()+"=======");
+            printWriter.println("=======" + new Date() + "=======");
             printWriter.flush();
             printWriter.close();
 
@@ -226,7 +226,7 @@ public class StreamAndRead {
         }
     }
 
-    public static void testObjectIO(){
+    public static void testObjectIO() {
         try {
             T t = new T();
             t.k = 100;
@@ -239,7 +239,7 @@ public class StreamAndRead {
             FileInputStream fis = new FileInputStream("/Users/wangyongzheng/IDEA/ItQuestion/dir1/dir2/myFile.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
             T t1 = (T) ois.readObject();
-            System.out.println(t1.i+" ,"+t1.j+" ,"+t1.d+" ,"+t1.k);
+            System.out.println(t1.i + " ," + t1.j + " ," + t1.d + " ," + t1.k);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -254,7 +254,7 @@ public class StreamAndRead {
 }
 
 //标记型接口，没有具体方法
-class T implements Serializable{
+class T implements Serializable {
     int i = 10;
     int j = 2;
     double d = 2.3;

@@ -11,36 +11,35 @@ import java.util.Arrays;
  */
 public class KMP {
     public static void main(String[] args) {
-        String str="ababcabcbababcabacaba";
-        String dest="ababcaba";
-        int[] array=kmpNext(dest);
+        String str = "ababcabcbababcabacaba";
+        String dest = "ababcaba";
+        int[] array = kmpNext(dest);
         System.out.println(Arrays.toString(array));
 
-        System.out.println(kmp(str,dest,array));
+        System.out.println(kmp(str, dest, array));
     }
 
     /**
-     *
-     * @param str 目标串
+     * @param str  目标串
      * @param dest 模式串
      * @param next 计算这个 next 数组，只和 pat 串有关
      * @return 字符串匹配的起始位置信息
      */
-    private static int kmp(String str,String dest,int[] next){
-        for (int i = 0,j=0; i < str.length(); i++) {
-            System.out.println("========================"+i);
-            while (j>0 && str.charAt(i)!=dest.charAt(j)){
-                j = next[j-1];
-                System.out.println("j和i不同后 == "+j);
+    private static int kmp(String str, String dest, int[] next) {
+        for (int i = 0, j = 0; i < str.length(); i++) {
+            System.out.println("========================" + i);
+            while (j > 0 && str.charAt(i) != dest.charAt(j)) {
+                j = next[j - 1];
+                System.out.println("j和i不同后 == " + j);
             }
 
-            if (str.charAt(i)==dest.charAt(j)){
+            if (str.charAt(i) == dest.charAt(j)) {
                 j++;
-                System.out.println("j++后 == "+j);
+                System.out.println("j++后 == " + j);
             }
 
-            if (j==dest.length()){
-                return i-j+1;
+            if (j == dest.length()) {
+                return i - j + 1;
             }
 
         }
@@ -51,20 +50,20 @@ public class KMP {
 
     /**
      * 获取到next数组字符串  计算这个 next 数组，只和 pat 串有关
+     *
      * @param dest 模式串（比较短的）
      * @return
-     *
      */
-    private static int[] kmpNext(String dest){
-        int[] next=new int[dest.length()];
-        next[0]=0;
-        for (int i = 1,j = 0; i < dest.length(); i++) {
+    private static int[] kmpNext(String dest) {
+        int[] next = new int[dest.length()];
+        next[0] = 0;
+        for (int i = 1, j = 0; i < dest.length(); i++) {
 //3
-            while (j > 0 && dest.charAt(i)!=dest.charAt(j)){
-                j = next[j-1];
+            while (j > 0 && dest.charAt(i) != dest.charAt(j)) {
+                j = next[j - 1];
             }
-    //1
-            if (dest.charAt(i)==dest.charAt(j)){
+            //1
+            if (dest.charAt(i) == dest.charAt(j)) {
                 j++;
             }
 //2
@@ -74,7 +73,6 @@ public class KMP {
 
         return next;
     }
-
 
 
 }
