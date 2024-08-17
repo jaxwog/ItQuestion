@@ -1,4 +1,4 @@
-package com.wyz.j2ee.reflection;
+package com.wyz.design.reflection;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

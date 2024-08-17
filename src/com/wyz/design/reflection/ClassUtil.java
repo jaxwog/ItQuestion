@@ -1,4 +1,4 @@
-package com.wyz.j2ee.reflection;
+package com.wyz.design.reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -35,9 +35,16 @@ public class ClassUtil {
             System.out.print(ms[i].getName() + "(");
             //获取参数类型--->得到的是参数列表的类型的类类型
             Class[] paramTypes = ms[i].getParameterTypes();
-            for (Class class1 : paramTypes) {
-                System.out.print(class1.getName() + ",");
+            for (int j = 0; j < paramTypes.length; j++) {
+                if (j == paramTypes.length - 1) {
+                    System.out.print(paramTypes[j].getName());
+                } else {
+                    System.out.print(paramTypes[j].getName() + ",");
+                }
             }
+            /*for (Class class1 : paramTypes) {
+                System.out.print(class1.getName() + ",");
+            }*/
             System.out.println(")");
         }
     }
@@ -87,9 +94,18 @@ public class ClassUtil {
             System.out.print(constructor.getName() + "(");
             //获取构造函数的参数列表--->得到的是参数列表的类类型
             Class[] paramTypes = constructor.getParameterTypes();
-            for (Class class1 : paramTypes) {
-                System.out.print(class1.getName() + ",");
+
+            for (int j = 0; j < paramTypes.length; j++) {
+                if (j == paramTypes.length - 1) {
+                    System.out.print(paramTypes[j].getName());
+                } else {
+                    System.out.print(paramTypes[j].getName() + ",");
+                }
             }
+
+            /*for (Class class1 : paramTypes) {
+                System.out.print(class1.getName() + ",");
+            }*/
             System.out.println(")");
         }
     }
